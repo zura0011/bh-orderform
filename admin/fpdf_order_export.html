@@ -1,4 +1,12 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
 require('../fpdf/fpdf.php');
 
 // Move uploaded images to a temporary folder
@@ -88,3 +96,6 @@ drawOrder($pdf, $order2, 7.2);
 
 $pdf->Output('I', 'orders_' . date('Ymd') . '.pdf');
 ?>
+
+</body>
+</html>
