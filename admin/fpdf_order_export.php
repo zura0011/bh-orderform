@@ -1,0 +1,90 @@
+<?php
+require('../fpdf/fpdf.php');
+
+// Move uploaded images to a temporary folder
+function handleUpload($fieldName) {
+    if (!isset($_FILES[$fieldName]) || $_FILES[$fieldName]['error'] !== UPLOAD_ERR_OK) {
+        return null;
+    }
+    $uploadDir = __DIR__ . '/uploads/';
+    if (!file_exists($uploadDir)) {
+        mkdir($uploadDir, 0777, true);
+    }
+    $filePath = $uploadDir . basename($_FILES[$fieldName]['name']);
+    move_uploaded_file($_FILES[$fieldName]['tmp_name'], $filePath);
+    return $filePath;
+}
+
+// --- Collect form data ---
+$order1 = [
+  'header' => $_POST['datetime1'] ?? 'ORDER #1',
+  'Name' => $_POST['name1'] ?? '',
+  'Address' => $_POST['address1'] ?? '',
+  'Contact No' => $_POST['contact1'] ?? '',
+  'Order' => $_POST['orderText1'] ?? '',
+  'Other Details' => $_POST['other1'] ?? '',
+  'Image' => handleUpload('cake1')
+];
+
+$order2 = [
+  'header' => $_POST['datetime2'] ?? 'ORDER #2',
+  'Name' => $_POST['name2'] ?? '',
+  'Address' => $_POST['address2'] ?? '',
+  'Contact No' => $_POST['contact2'] ?? '',
+  'Order' => $_POST['orderText2'] ?? '',
+  'Other Details' => $_POST['other2'] ?? '',
+  'Image' => handleUpload('cake2')
+];
+
+// --- Create PDF ---
+$pdf = new FPDF('L', 'in', array(13, 8.5)); // Landscape Folio
+$pdf->SetMargins(0.5, 0.5, 0.5, 0.5);
+$pdf->AddPage();
+
+// --- Function to draw one order column ---
+function drawOrder($pdf, $order, $xStart)
+{
+    $y = .5; 
+    $colWidth = 5.5;
+
+    // Header (Date/Time)
+    $pdf->SetXY($xStart, $y);
+    $pdf->SetFont('Arial', 'B', 20);
+    $pdf->SetTextColor(255, 0, 0);
+    $pdf->Cell($colWidth, 0.4, strtoupper($order['header']), 0, 1, 'C');
+    $y += 0.5;
+
+    // Reset font/color
+    $pdf->SetTextColor(0, 0, 0);
+    $pdf->SetFont('Arial', '', 12);
+
+    // Text fields (label + value on one line)
+    foreach ($order as $label => $value) {
+        if ($label === 'header' || $label === 'Image') continue;
+
+        $pdf->SetXY($xStart, $y);
+        $pdf->SetFont('Arial', 'B', 12);
+        $pdf->Cell(1.5, 0.25, "$label:", 0, 0, 'L');
+
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->MultiCell($colWidth - 1.5, 0.25, trim($value), 0, 'L');
+        $y = $pdf->GetY() + 0.1;
+    }
+
+    // Insert image (if uploaded)
+    if (!empty($order['Image']) && file_exists($order['Image'])) {
+        $pdf->SetXY($xStart + 1.0, $y + 0.2);
+        $maxWidth = 4.0;  // limit image width
+        $maxHeight = 3.0; // limit image height
+        $pdf->Image($order['Image'], $xStart, $y + 0.2, $maxWidth, 0);
+    }
+}
+
+// --- Left column ---
+drawOrder($pdf, $order1, 0.5);
+
+// --- Right column ---
+drawOrder($pdf, $order2, 7.2);
+
+$pdf->Output('I', 'orders_' . date('Ymd') . '.pdf');
+?>

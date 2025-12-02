@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baked Heaven</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body class="font-sans bg-pink-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center">
+                            <img src="images/bh.png" class="logo_header" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-700 hover:text-pink-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#gallery" class="nav-link text-gray-700 hover:text-pink-600 px-3 py-2 rounded-md text-sm font-medium">Gallery</a>
+                        <a href="#flavors" class="nav-link text-gray-700 hover:text-pink-600 px-3 py-2 rounded-md text-sm font-medium">Flavors</a>
+                        <a href="#about" class="nav-link text-gray-700 hover:text-pink-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-pink-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-pink-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50">Home</a>
+                <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50">Gallery</a>
+                <a href="#flavors" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50">Flavors</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50">About</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Handcrafted Cakes for Every Occasion</h1>
+                    <p class="text-lg text-gray-600 mb-8">Celebrate life's sweetest moments with our artisan cakes, baked with love and decorated to perfection.</p>
+                    <div class="flex space-x-4">
+                        <a href="#gallery" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-medium transition duration-300 transform hover:scale-105">View Gallery</a>
+                        <a href="#contact" class="border-2 border-pink-600 text-pink-600 hover:bg-pink-50 px-6 py-3 rounded-full font-medium transition duration-300">Contact Us</a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative floating">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1089&q=80" 
+                             alt="Beautiful cake" 
+                             class="rounded-2xl shadow-xl w-full max-w-md transform rotate-2">
+                        <div class="absolute -bottom-5 -right-5 bg-white p-3 rounded-full shadow-lg">
+                            <div class="bg-pink-100 p-3 rounded-full">
+                                <i class="fas fa-heart text-pink-500 text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cakes -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Signature Creations</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Each cake is a masterpiece, crafted with premium ingredients and artistic flair.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Cake 1 -->
+                <div class="cake-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1552689486-f6773047d19f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" 
+                             alt="Floral Wedding Cake" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            Best Seller
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Elegant Floral Wedding</h3>
+                        <p class="text-gray-600 mb-4">A timeless classic with delicate sugar flowers and elegant piping.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="flavor-tag bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs">Vanilla Bean</span>
+                            <span class="flavor-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Raspberry</span>
+                            <span class="flavor-tag bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">White Chocolate</span>
+                        </div>
+                        <button class="w-full bg-pink-50 text-pink-600 hover:bg-pink-100 py-2 rounded-lg font-medium transition duration-300">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Cake 2 -->
+                <div class="cake-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1542828778-2774849eac3d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" 
+                             alt="Chocolate Drip Cake" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Chocolate Indulgence</h3>
+                        <p class="text-gray-600 mb-4">Rich chocolate cake with ganache drip and chocolate curls.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="flavor-tag bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">Dark Chocolate</span>
+                            <span class="flavor-tag bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs">Salted Caramel</span>
+                            <span class="flavor-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Hazelnut</span>
+                        </div>
+                        <button class="w-full bg-pink-50 text-pink-600 hover:bg-pink-100 py-2 rounded-lg font-medium transition duration-300">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Cake 3 -->
+                <div class="cake-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                             alt="Naked Cake with Berries" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            New
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Rustic Berry Naked Cake</h3>
+                        <p class="text-gray-600 mb-4">A semi-naked cake with fresh berries and edible flowers.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="flavor-tag bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">Lemon</span>
+                            <span class="flavor-tag bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs">Strawberry</span>
+                            <span class="flavor-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Earl Grey</span>
+                        </div>
+                        <button class="w-full bg-pink-50 text-pink-600 hover:bg-pink-100 py-2 rounded-lg font-medium transition duration-300">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cake Gallery -->
+    <section id="gallery" class="py-16 bg-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Cake Gallery</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Browse our collection of stunning cake designs for inspiration.</p>
+                
+                <div class="flex justify-center mt-8">
+                    <div class="inline-flex rounded-md shadow-sm" role="group">
+                        <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg bg-pink-600 text-white">
+                            All
+                        </button>
+                        <button type="button" class="px-4 py-2 text-sm font-medium bg-white text-pink-600 hover:bg-pink-50">
+                            Weddings
+                        </button>
+                        <button type="button" class="px-4 py-2 text-sm font-medium bg-white text-pink-600 hover:bg-pink-50">
+                            Birthdays
+                        </button>
+                        <button type="button" class="px-4 py-2 text-sm font-medium bg-white text-pink-600 hover:bg-pink-50">
+                            Special Occasions
+                        </button>
+                        <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg bg-white text-pink-600 hover:bg-pink-50">
+                            Custom
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery items will be populated by JavaScript -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-white border-2 border-pink-600 text-pink-600 hover:bg-pink-50 px-6 py-3 rounded-full font-medium transition duration-300">
+                    Load More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flavors Section -->
+    <section id="flavors" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Delicious Flavors</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Mix and match cake flavors, fillings, and frostings to create your perfect cake.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Cake Flavors -->
+                <div class="bg-pink-50 rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-pink-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-cake text-pink-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Cake Flavors</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                            <span>Classic Vanilla Bean</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                            <span>Rich Chocolate Fudge</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                            <span>Zesty Lemon</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                            <span>Red Velvet</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                            <span>Carrot Cake</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+                            <span>Coconut</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Fillings -->
+                <div class="bg-blue-50 rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-fill-drip text-blue-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Fillings</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span>Raspberry Jam</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span>Salted Caramel</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span>Lemon Curd</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span>Chocolate Ganache</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span>Strawberry Mousse</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span>Cream Cheese</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Frostings -->
+                <div class="bg-purple-50 rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-purple-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-ice-cream text-purple-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Frostings</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                            <span>Swiss Meringue Buttercream</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                            <span>Cream Cheese Frosting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                            <span>Chocolate Buttercream</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                            <span>Whipped Cream</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                            <span>Italian Meringue</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                            <span>Vegan Buttercream</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-6">
+                        Sweet Delights began as a small home bakery in 2010, born from a passion for baking and a love for creating beautiful, delicious cakes. What started as a hobby quickly grew into a thriving business as word spread about our exceptional quality and attention to detail.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Today, our team of talented bakers and decorators continue the tradition of crafting cakes that not only taste amazing but are also works of art. We use only the finest ingredients, sourced locally whenever possible, to ensure every bite is a delight.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="bg-pink-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-award text-pink-500 text-xl"></i>
+                        </div>
+                        <p class="text-gray-600">
+                            Winner of "Best Wedding Cake" at the National Cake Awards 2022
+                        </p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-xl overflow-hidden shadow-md h-48">
+                            <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                 alt="Baker decorating cake" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-md h-48">
+                            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                 alt="Ingredients" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-md h-48">
+                            <img src="https://images.unsplash.com/photo-1607472586893-edb37beb1d54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                 alt="Cake shop" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-md h-48">
+                            <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                                 alt="Finished cake" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Sweet Words From Our Customers</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear what our customers have to say!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-pink-50 rounded-xl p-8 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "The wedding cake was absolutely stunning and tasted even better than it looked! Our guests couldn't stop raving about it. Sweet Delights made our special day even more memorable."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" 
+                                 alt="Sarah J." 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah J.</h4>
+                            <p class="text-sm text-gray-500">Wedding Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-pink-50 rounded-xl p-8 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "I've ordered birthday cakes from Sweet Delights for the past three years and they never disappoint. The designs are creative and the flavors are incredible. My daughter's unicorn cake was the talk of her party!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" 
+                                 alt="Michelle T." 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Michelle T.</h4>
+                            <p class="text-sm text-gray-500">Birthday Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-pink-50 rounded-xl p-8 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "As a corporate event planner, I need reliable vendors who deliver exceptional quality. Sweet Delights has become our go-to for all our event cakes. Their attention to detail and professionalism is unmatched."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                                 alt="David K." 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">David K.</h4>
+                            <p class="text-sm text-gray-500">Corporate Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-pink-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <h2 class="text-3xl font-bold mb-6">Let's Create Something Sweet Together</h2>
+                    <p class="mb-8 opacity-90">
+                        Ready to order your dream cake? Have questions about our services? We'd love to hear from you! Fill out the form or contact us directly.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-pink-500 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Our Bakery</h4>
+                                <p class="opacity-90">123 Sweet Street, Dessertville, DV 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-pink-500 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Call Us</h4>
+                                <p class="opacity-90">(555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-pink-500 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email Us</h4>
+                                <p class="opacity-90">bakedheavenph@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-pink-500 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Hours</h4>
+                                <p class="opacity-90">Monday - Friday: 9am - 6pm</p>
+                                <p class="opacity-90">Saturday: 10am - 4pm</p>
+                                <p class="opacity-90">Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="bg-white text-pink-600 hover:bg-pink-100 p-3 rounded-full">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-white text-pink-600 hover:bg-pink-100 p-3 rounded-full">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-white text-pink-600 hover:bg-pink-100 p-3 rounded-full">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form class="bg-white rounded-xl shadow-lg p-8 text-gray-800">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Send Us a Message</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-1">Name*</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-1">Email*</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-sm font-medium mb-1">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="occasion" class="block text-sm font-medium mb-1">Occasion</label>
+                            <select id="occasion" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                                <option value="">Select an occasion</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="baby-shower">Baby Shower</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium mb-1">Your Message*</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white py-3 rounded-lg font-medium transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-birthday-cake text-2xl text-pink-500 mr-2"></i>
+                        <span class="text-xl font-bold">Sweet Delights</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Creating edible art since 2010. Our passion is baking beautiful, delicious cakes for your special occasions.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-pink-400 transition">Home</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-pink-400 transition">Gallery</a></li>
+                        <li><a href="#flavors" class="text-gray-400 hover:text-pink-400 transition">Flavors</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-pink-400 transition">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-pink-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Cake Types</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Wedding Cakes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Birthday Cakes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Cupcakes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Dessert Tables</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition">Custom Cakes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to get updates on new designs and special offers.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg text-gray-800 w-full">
+                        <button class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2023 Sweet Delights. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-pink-400">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-pink-400">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-pink-400">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-pink-400">
+                        <i class="fab fa-yelp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-pink-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

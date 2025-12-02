@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --body: #ECECEC;
+
+    --highlight: #F5379C;
+    --fontColorDark: #34475D;
+    --fontColorLight: #FFFFFF;
+
+    --currOrder: #7D90FE;
+    --doneOrder: #DA7BD9;
+    --wklySales: #A3BDFD;
+    --ttlSales: #F18BA1;
+
+    --lineColor: #E2E2E2;
+
+    --doneStatus: #209C49;
+    --followUpStatus: #E5D64E;
+    --rushStatus: #F71818;
+    --rescheduleStatus: #5442D6;
+
+    --searchBg: #D9D9D9;
+    --searchTextColor: #A8A8A8;
+
+    --font: Poppins, Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-family: var(--font);
+}
+
+body {
+    max-height: 1vh;
+    background-color: var(--body);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--fontColorLight);
+    padding: 10px 50px;
+    position: fixed;
+
+}
+
+.headLeftContainer img {
+    width: 20%;
+    height: auto;
+}
+
+.headRightContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.notifContainer {
+    position: relative;
+    cursor: pointer;
+}
+
+.notifContainer p {
+    position: absolute;
+    top: -3px;
+    right: -5px;
+    padding: 1px 4.5px;
+    background-color: var(--highlight);
+    border-radius: 50%;
+    font-size: 8px;
+    color: var(--body);
+    font-weight: 600;
+}
+
+.headRightContainer i {
+    color: var(--fontColorDark);
+    cursor: pointer;
+}
+
+.headRightContainer .accountProfile {
+    width: 15%;
+    height: auto;
+    cursor: pointer;
+}
+
+.sideNav {
+    height: 100%;
+    background-color: var(--fontColorLight);
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    transition: 0.5s;
+    padding: 120px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: -1;
+}
+
+.sideNav .dashboardBtn {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border-radius: 25px;
+    color: var(--fontColorDark);
+    font-size: 14px;
+    padding: 10px 30px;
+    transition: .15s;
+    cursor: pointer;
+}
+
+.sideNav .ordersBtn {
+    display: flex;
+    align-items: center;
+    gap: 62px;
+    border-radius: 25px;
+    color: var(--fontColorDark);
+    font-size: 14px;
+    padding: 10px 30px;
+    transition: .15s;
+    cursor: pointer;
+}
+
+.sideNav .calendarBtn {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border-radius: 25px;
+    color: var(--fontColorDark);
+    font-size: 14px;
+    padding: 10px 30px;
+    transition: .15s;
+    cursor: pointer;
+}
+
+.sideNav .inventoryBtn {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border-radius: 25px;
+    color: var(--fontColorDark);
+    font-size: 14px;
+    padding: 10px 30px;
+    transition: .15s;
+    cursor: pointer;
+}
+
+.sideNav .reportsBtn {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border-radius: 25px;
+    color: var(--fontColorDark);
+    font-size: 14px;
+    padding: 10px 30px;
+    transition: .15s;
+    cursor: pointer;
+}
+
+.sideNav .dashboardBtn:hover, 
+.sideNav .ordersBtn:hover,
+.sideNav .calendarBtn:hover,
+.sideNav .inventoryBtn:hover,
+.sideNav .reportsBtn:hover {
+    background-color: var(--highlight);
+    color: var(--fontColorLight);
+}
+
+.sideNav .ordersActionContainer {
+    display: none;
+    margin-top: -10px;
+}
+
+.sideNav .ordersActionContainer div {
+    display: flex;
+    align-items: center;
+    padding: 10px 60px;
+    gap: 20px;
+    justify-content: flex-start;
+    border-radius: 25px;
+    color: var(--fontColorDark);
+    transition: .15s;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sideNav .ordersActionContainer div:hover {
+    background-color: var(--highlight);
+    color: var(--fontColorLight);
+}
+
+.mainContentContainer, .orderFormContainer {
+    padding: 130px 50px 130px 310px;
+    position: relative;
+    z-index: -2;
+}
+
+.summaryContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.currOrders {
+    background-color: var(--currOrder);
+    padding: 10px 20px;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.doneOrders {
+    background-color: var(--doneOrder);
+    padding: 10px 20px;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.weeklySales {
+    background-color: var(--wklySales);
+    padding: 10px 20px;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.totalSales {
+    background-color: var(--ttlSales);
+    padding: 10px 20px;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--fontColorLight);
+    color: var(--fontColorDark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    color: var(--fontColorLight);
+    margin-right: 20px;
+
+}
+
+.text .label {
+    font-size: 12px;
+}
+
+.text .count {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+a.addOrder {
+    border-radius: 5px;
+    background-color: var(--highlight);
+    color: var(--fontColorLight);
+    font-size: 14px;
+    padding: 10px 30px;
+    transition: .15s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a.addOrder:hover {
+    border: 1px solid var(--highlight);
+    background-color: transparent;
+    color: var(--highlight);
+}
+
+.orderForm {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.orderFormHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.orderOne, .orderTwo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.orderOne .inputContainer, .orderTwo .inputContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    
+}
+
+.orderInput {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.orderInput input, .orderInput textarea {
+    font-family: var(--font);
+    padding: 10px;
+    border: 1px solid var(--fontColorDark);
+    border-radius: 5px;
+    transition: .15s;
+}
+
+input[type="text"]:focus, textarea:focus {
+  border-color: var(--highlight); /* Border color on focus */
+  outline: none; /* Removes the default browser outline */
+}
+
+.printBtn {
+    padding: 10px;
+    font-family: var(--font);
+    font-size: 18px;
+    background-color: var(--highlight);
+    color: var(--fontColorLight);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .15s;
+}
+.printBtn:hover {
+    background-color: transparent;
+    color: var(--highlight);
+    border: 1px solid var(--highlight);
+}

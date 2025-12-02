@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web OCR Form Auto-Fill</title>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.0.2/dist/tesseract.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #f9f9f9;
+    }
+    h2 { color: #333; }
+    form {
+      display: inline-block;
+      text-align: left;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    label { font-weight: bold; display: block; margin-top: 10px; }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    #output {
+      margin-top: 20px;
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h2>🖼️ OCR Form Auto-Fill</h2>
+  <input type="file" id="imageInput" accept="image/*"><br><br>
+
+  <form id="ocrForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Recognized name">
+
+    <label for="address">Address</label>
+    <textarea id="address" rows="2" placeholder="Recognized address"></textarea>
+
+    <label for="contact">Contact No</label>
+    <input type="text" id="contact" placeholder="Recognized contact number">
+
+    <label for="order">Order</label>
+    <input type="text" id="order" placeholder="Recognized order">
+
+    <label for="datetime">Date & Time</label>
+    <input type="text" id="datetime" placeholder="Recognized date and time">
+  </form>
+
+  <div id="output">Upload an image to extract and auto-fill the fields.</div>
+
+  <script>
+    const fieldMap = {
+      name: "name",
+      address: "address",
+      contact: "contact",
+      "contact no": "contact",
+      order: "order",
+      "date & time": "datetime",
+      date: "datetime",
+      time: "datetime"
+    };
+
+    document.getElementById('imageInput').addEventListener('change', async (event) => {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      document.getElementById('output').innerText = '⏳ Recognizing text...';
+
+      try {
+        const { data: { text } } = await Tesseract.recognize(file, 'eng', {
+          logger: info => console.log(info)
+        });
+
+        // Split and clean lines
+        const lines = text.split('\n').map(l => l.trim()).filter(l => l);
+
+        // Clear previous values
+        for (let key in fieldMap) {
+          const id = fieldMap[key];
+          document.getElementById(id).value = '';
+        }
+
+        // Match and fill fields
+        lines.forEach(line => {
+          const match = line.match(/^(.*?):\s*(.*)$/); // Match "Label: Value"
+          if (match) {
+            const label = match[1].toLowerCase().trim();
+            const value = match[2].trim();
+            const fieldId = fieldMap[label];
+            if (fieldId && value) {
+              document.getElementById(fieldId).value = value;
+            }
+          }
+        });
+
+        document.getElementById('output').innerText = '✅ OCR complete! Fields auto-filled.';
+      } catch (err) {
+        console.error(err);
+        document.getElementById('output').innerText = '⚠️ Error recognizing text.';
+      }
+    });
+  </script>
+</body>
+</html>
